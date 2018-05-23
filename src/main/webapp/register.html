@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -48,7 +48,7 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active">
+                    <li>
                         <a href="index.html">
                             <span class="glyphicon glyphicon-home"></span>
                         </a>
@@ -62,17 +62,6 @@
                                 <a href="categoria.html">{{x.nome}}</a>
                             </li>
                         </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <form>
-                            <button type="button" id="loginBtn" class="btn btn-success" data-toggle="modal" data-target="#myModal">Accedi</button>
-                            <button href="#" type="button" class="btn btn-danger" id="loginBtn">Esci</button>
-                        </form>
-                    </li>
-                    <li>
-                        <a href="register.html">Registrati</a>
                     </li>
                 </ul>
             </div>
@@ -91,7 +80,7 @@
                     <fieldset>
 
                         <div class="form-group">
-                            <legend class="text-center">Inserire dati validi al fine della registrazione
+                            <legend class="text-center" style="color:#007FFF">Inserire dati validi al fine della registrazione
                                 <br>
                                 <span class="req">
                                     <small> campo obbligatorio *</small>
@@ -177,6 +166,9 @@
                 <script type="text/javascript">
                     document.getElementById("field_terms").setCustomValidity("Accettare i Termini e Condizioni");
                 </script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+                <script src="app/controller/db_controller.js"></script>
             </div>
             <!-- ends col-6 -->
 

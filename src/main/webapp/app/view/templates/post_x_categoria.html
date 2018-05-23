@@ -1,0 +1,72 @@
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-default btn-xs" data-toggle="offcanvas">Tags</button>
+            </p>
+
+            <hr/>
+            <h1 class="text-center">{{categoria.nome}}</h1>
+            <hr/>
+
+            <div class="row" ng-controller="dbController">
+                <div class="col-sm-12 col-md-12" ng-repeat="p in post">
+                    <div class="thumbnail">
+                        <img class="image-thumbnail" src="http://via.placeholder.com/800x200" alt="...">
+                        <div class="caption">
+                            <h3>{{p.titolo}}</h3>
+                            <p>{{p.descrizione}}</p>
+                            <a ui-sref="common.details( {id: p.id} )" class="btn btn-primary" role="button">Leggi il Post</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">1</a>
+                        </li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                        <li>
+                            <a href="#">4</a>
+                        </li>
+                        <li>
+                            <a href="#">5</a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <div class="list-group">
+                <a href="#" class="list-group-item" ng-repeat="t in tag">{{t.nome}}</a>
+            </div>
+            <div class="list-group">
+                <a href="creapost.html" id="creaBtn" class="list-group-item">Crea Post</a>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+    </div>

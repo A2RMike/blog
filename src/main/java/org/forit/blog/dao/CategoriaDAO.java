@@ -35,4 +35,30 @@ public class CategoriaDAO {
         return posts;
     }
     
+    public CategoriaDTO getCategoria(long ID) {
+        /*EntityManagerFactory emf = Persistence.createEntityManagerFactory("blog_pu");
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<CategoriaEntity> query = em.createNamedQuery("query_categoria", CategoriaEntity.class);
+
+        CategoriaEntity c = em.find(CategoriaEntity.class, ID);
+        
+        String nome = c.getNome();
+        String descrizione = c.getDescrizione();
+        String immagine = c.getImmagine();
+        boolean visibile = c.isVisibile();
+
+        CategoriaDTO cat = new CategoriaDTO(ID, nome, descrizione, immagine, visibile);
+        
+        em.close();
+        emf.close();
+*/
+        
+        for(CategoriaDTO cat : getListaCategorie())
+            if(cat.getID()==ID)        
+                return cat;
+            
+        
+        return null;
+    }
+    
 }

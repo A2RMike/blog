@@ -1,0 +1,77 @@
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+            <p class="pull-right visible-xs">
+                <button type="button" class="btn btn-default btn-xs" data-toggle="offcanvas">Tags</button>
+            </p>
+
+
+            <div class="row">
+                <h1 class="text-center">Post</h1>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" ng-bind="post.titolo"></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <img class="img-responsive" src="http://via.placeholder.com/300x200" />
+                        </div>
+                        <div class="col-md-10" id="postText">
+                            <p ng-bind="post.descrizione"></p>
+                        </div>
+                        <hr/>
+                    </div>
+                    <div class="media col-md-offset-2" id="commentPost" ng-controller="dbController">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object" src="http://via.placeholder.com/50x50" alt="aaaaaaa manca l'immagine!">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading" ng-bind="commento.nickname"></h4>
+                            <p ng-bind="commento.testo"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+            <h4 class="col-md-offset-2">Comunicaci cosa ne pensi qui sotto!</h4>
+
+            <form class="form-horizontal col-md-10 col-md-offset-2">
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Invia</button>
+                </div>
+            </form>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            <div class="list-group">
+                <a href="#" class="list-group-item" ng-repeat="t in tag">{{t.nome}}</a>
+            </div>
+            <div class="list-group">
+                <a href="creapost.html" id="creaBtn" class="list-group-item">
+                    <b>Crea Post</b>
+                </a>
+            </div>
+        </div>
+        <!--/.sidebar-offcanvas-->
+    </div>
+
+
+
+
+</div>

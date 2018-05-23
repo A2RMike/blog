@@ -1,7 +1,12 @@
 "use strict"
 
-angular.module('app', [])
+angular.module('app')
     .controller('dbController', function ($scope, $http) {
+        $scope.post = [];
+        $scope.categoria =  [];
+        $scope.tag = [];
+        $scope.commento = [];
+
         $http.get('http://localhost:8080/blog/rest/post').
             then(function (response) {
                 $scope.post = response.data;
@@ -13,6 +18,10 @@ angular.module('app', [])
         $http.get('http://localhost:8080/blog/rest/tags').
             then(function (response) {
                 $scope.tag = response.data;
+            });
+        $http.get('http://localhost:8080/blog/rest/commenti').
+            then(function (response) {
+                $scope.commento = response.data;
             });
     });
 

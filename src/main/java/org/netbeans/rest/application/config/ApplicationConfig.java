@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(org.forit.blog.rest.CategoriaRest.class);
+        resources.add(org.forit.blog.rest.CommentoRest.class);
         resources.add(org.forit.blog.rest.PostRest.class);
         resources.add(org.forit.blog.rest.TagRest.class);
     }

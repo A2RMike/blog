@@ -21,152 +21,13 @@
     <link href="css/mike.css" rel="stylesheet">
 
 
-    
+
 </head>
 
-<body ng-controller="dbController">
-    <nav class="navbar navbar-fixed-top navbar-inverse sticky">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <img id="logo" src="img/games-icon.png">
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="index.html">
-                            <span class="glyphicon glyphicon-home"></span>
-                        </a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorie
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="x in categoria">
-                                <a href="categoria.html">{{x.nome}}</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <form>
-                            <button type="button" id="loginBtn" class="btn btn-success" data-toggle="modal" data-target="#myModal">Accedi</button>
-                            <button href="#" type="button" class="btn btn-danger" id="loginBtn">Esci</button>
-                        </form>
-                    </li>
-                    <li>
-                        <a href="register.html">Registrati</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.nav-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <!-- /.navbar -->
+<body>
 
 
-
-
-    <div class="container">
-
-        <div class="row row-offcanvas row-offcanvas-right">
-
-            <div class="col-xs-12 col-sm-9">
-                <p class="pull-right visible-xs">
-                    <button type="button" class="btn btn-default btn-xs" data-toggle="offcanvas">Tags</button>
-                </p>
-                <div class="jumbotron">
-                    <h1>Ciao, Utente!</h1>
-                    <p>Effettua il Login per postare</p>
-                    <p>
-                        <a class="btn btn-primary" id="jbutton" href="#" role="button" data-toggle="modal" data-target="#myModal">Accedi</a>
-                    </p>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12 col-md-12" ng-repeat="p in post">
-                        <div class="thumbnail">
-                            <img class="image-thumbnail" src="http://via.placeholder.com/800x200" alt="...">
-                            <div class="caption">
-                                <h3>{{p.titolo}}</h3>
-                                <p>{{p.descrizione}}</p>
-                                <a href="post.html" class="btn btn-primary" role="button">Leggi il Post</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-                <div class="list-group">
-                    <a href="#" class="list-group-item" ng-repeat="t in tag">{{t.nome}}</a>
-                </div>
-                <div class="list-group">
-                    <a href="creapost.html" id="creaBtn" class="list-group-item">Crea Post</a>
-                </div>
-            </div>
-            <!--/.sidebar-offcanvas-->
-        </div>
-
-
-
-
-
-
-
-    </div>
-    <!--/row-->
-
-    <footer class="footer text-center">
-        <p>&copy; RosMagazzino Company, Inc.</p>
-    </footer>
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Accesso</h4>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>
-                            <button type="button" class="btn btn-primary">Accedi</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a type="button" class="btn btn-link" href="register.html">Registrati</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
+    <ui-view></ui-view>
 
 
     <!-- Bootstrap core JavaScript
@@ -175,11 +36,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
     <script src="js/offcanvas.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/model/post.service.js"></script>
+    <script src="app/model/categoria.service.js"></script>
+
     <script src="app/controller/db_controller.js"></script>
+    <script src="app/controller/post-details.controller.js"></script>
+    <script src="app/controller/categoria-details.controller.js"></script>
+    <script src="app/controller/post-insert.controller.js"></script>
+
+    <script src="app/modal.js"></script>
+    
+
 </body>
 
 </html>
